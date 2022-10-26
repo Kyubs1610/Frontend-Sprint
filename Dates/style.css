@@ -1,0 +1,52 @@
+.box{
+    border-radius: 360px;
+    border: px solid rgb(21, 20, 20);
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    display:inline-block;
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    margin: 30px;
+    color: azure;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+}
+
+.box h2, .box {
+    text-align: center;
+    
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+    color: azure;
+}
+
+p#birthday{
+    text-align: center;
+    color: rgb(241, 241, 26);
+    font-weight: 700;
+    font-size: x-large;
+}
+h1, h3{
+    text-align: center;
+    color: azure;
+}
+
+body{
+    background-image: url("./Asset/wallpaperbetter.com_1920x1080.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+button{
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    border-radius: 10px;
+
+}

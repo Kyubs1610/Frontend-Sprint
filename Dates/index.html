@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Date</title>
+</head>
+<body>
+    
+    <h1>Display Time with different timezones</h1>
+
+ <div class = "container">
+<div class="box"> 
+    <h2>Brussels</h2>
+    <p id="bxlTime"> </p>
+</div>
+<div class="box"> 
+    <h2>Tokyo</h2>
+    <p id="usTime"> </p>
+</div>
+
+
+<div class="box"> 
+    <h2>Reykjavik (Iceland)</h2>
+    <p id="iceTime"> </p>
+</div>
+<div class="box"> 
+    <h2>Saint-Petersburg (Russia)</h2>
+    <p id="rusTime"> </p>
+</div>    
+</div>
+
+    <h1> How many days have passed since my birthday </h1>
+
+    <p id="birthday"> </p>
+
+    <h1> How many days have passed since any point in time (after 1970)</h1>
+
+        <p> <b> Enter Date 1   </b>   
+        <input type="date" id="dateInput1">   
+        <br> <br>   
+          
+        <p> <b> Enter Date 2   </b>   
+        <input type="date" id="dateInput2">   
+        <br> <br>       
+
+        <button onclick="daysDifference()">   
+            Calculate number of days   
+          </button>   
+      </p>   
+
+      <h3 id="result"></h3> 
+
+      <h1> Convert hours in date </h1>
+
+      <p> <b> Enter a number of hours   </b>   
+        <input type="number" id="numberInput">   
+        <br> <br>   
+     
+        <h3 id="convert"></h3> 
+
+    <script src="script.js"></script>
+</body>
+</html>
