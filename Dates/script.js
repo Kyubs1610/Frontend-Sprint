@@ -70,11 +70,14 @@ function daysDifference() {
 //  Write a function to display the time and date for any amount of hours given in the future. 
 //  Create a number input for the hours and listen for keyup events, dynamically display the date in the number of hours given by the input.
 
-const num = document.getElementById("numberInput").value
-const total = now.setTime(now.getTime() + num * 60 * 60 * 1000);
+
 
 document.getElementById("numberInput").addEventListener('keyup', function (e) {
+    const num = document.getElementById("numberInput").value
+    const total = now.setTime(now.getTime() + num * 60 * 60 * 1000);
     if (e.key === 'Enter'){        
       return document.getElementById('convert').innerHTML = (total);
     }
   });
+
+
