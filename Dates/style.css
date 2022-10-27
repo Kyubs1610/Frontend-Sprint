@@ -97,12 +97,13 @@ button{
     display: flex;
     flex-direction: column;
     padding-top: 4em;
+    
 
 }
 
 .calendar strong{
   font-size: 3em;
-  letter-spacing: -0.05em;
+  letter-spacing: 3px;
    color: #5aade8;
  
 }

@@ -8,21 +8,21 @@
 // setInterval(getBxTime,1000);
 //call the function name every second so the time will not stay stuck
 
-const getUsTime = function () { 
+const getUsTime =  () => { 
 document.getElementById('usTime').innerHTML=
 new Date ().toLocaleString("fr-BE",{timeZone:'japan',dateStyle:'medium',timeStyle :'long', hourCycle:'h24'})
 };
 getUsTime()
 setInterval(getUsTime,1000);
 
-const getIceTime = function () { 
+const getIceTime = () => { 
 document.getElementById('iceTime').innerHTML=
 new Date ().toLocaleString("fr-BE",{timeZone:'Atlantic/Reykjavik',dateStyle:'medium',timeStyle :'medium', hourCycle:'h24'})
 };
 getIceTime()
 setInterval(getIceTime,1000);
 
-const getRuTime = function () { 
+const getRuTime = () => { 
 document.getElementById('rusTime').innerHTML=
 new Date ().toLocaleString("fr-BE",{timeZone:'Etc/GMT-3',dateStyle:'medium',timeStyle :'long', hourCycle:'h24'})
 };
@@ -37,17 +37,31 @@ setInterval(getRuTime,1000);
 // When clicking on the hours, toggle the display in 12-hours format or back to 24-hours format.
 const weekday = ["Sun","Mon","Tues","Wed","Thu","Fri","Sat"];
 const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let clock = document.querySelector(".clock")
 
-const getBxTime = function () { 
+let timeOption = ""
+
+const getBxTime = () => { 
   document.querySelector('.clock').innerHTML=
-  new Date ().toLocaleString("fr-BE",{timeZone:'Europe/Brussels',timeStyle :'medium', hourCycle:'h24'});
+  new Date ().toLocaleString("fr-BE",{timeZone:'Europe/Brussels',timeStyle :'medium', hourCycle:'h24'}) + timeOption
+  
   document.querySelector('.jour').innerHTML=  new Date().getDate();
   document.querySelector('.date').innerHTML= month [new Date().getMonth()];
   document.querySelector('.day').innerHTML=  weekday [new Date().getDay()];
-  document.querySelector('.year').innerHTML=  new Date().getFullYear();
+  document.querySelector('.year').innerHTML=  new Date().getFullYear(); 
   };
-  getBxTime()
+
+getBxTime()
 setInterval(getBxTime,1000);
+
+clock.addEventListener('click', () => {
+  document.querySelector('.clock').innerHTML= 
+  new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+ // AM-PM stay only 1 sec because of the setInterval, will check a solution later 
+// timeOption = 'PM'
+
+});
+
 
 
 // 2. Using timestamps, find how many days have passed since the date of your birth. Feeling old, yet?
@@ -59,7 +73,7 @@ const birth = new Date('1988-10-16')
 const result = ((now.getTime() - birth.getTime())/ (1000 * 60 * 60 * 24))
 
 
-const feelOld = function(){
+const feelOld = () => {
     document.getElementById('birthday').innerHTML=
     (Math.trunc(result)  + ' days have passed since my birthday')
 //Math.trunc will remove the decimale
