@@ -73,10 +73,15 @@ function daysDifference() {
 
 
 document.getElementById("numberInput").addEventListener('keyup', function (e) {
-    const num = document.getElementById("numberInput").value
-    const total = now.setTime(now.getTime() + num * 60 * 60 * 1000);
+    
+  
     if (e.key === 'Enter'){        
-      return document.getElementById('convert').innerHTML = (total);
+      const num = document.getElementById("numberInput").value
+      console.log(num)
+  
+      const total = now.setTime(now.getTime() + num * 60 * 60 * 1000);
+      const dateFormat = new Date(total)
+      return document.getElementById('convert').innerHTML = (dateFormat);
     }
   });
 
