@@ -50,3 +50,71 @@ button{
     border-radius: 10px;
 
 }
+
+/* Create the calendar */
+
+.calendar{
+  font-size: 1em; /* change icon size */
+  display: flex;
+  position: relative;
+  width: 13em;
+  height: 15em;
+  background-color: #fff;
+  border-radius: 2em;
+  overflow: hidden;
+  box-shadow: 0 1px 0 #fd1b1b, 0 2px 0 rgb(68, 1, 1), 0 3px 0 #fd1b1b, 0 4px 0 rgb(68, 1, 1), 0 5px 0 #fd1b1b, 0 0 0 1px rgb(68, 1, 1);
+
+}
+.calendar *{
+ width: 100%;
+ font-size: 1em;
+ font-weight: bold;
+ font-style: normal;
+ text-align: center;
+       
+}
+/*The universal selector (*) applies the same styles to any element*/
+
+.calendar em.day {
+  position: absolute;
+  top: 0;
+  padding: 0.4em 0;
+  color: #5aade8;
+  background-color: #fd1b1b;
+  font-size: 2em;
+}
+
+.calendar em.year{
+    position: absolute;
+    bottom: 0;
+    padding: 0.4em 0;
+    color: #5aade8;
+    background-color: #fd1b1b;
+    font-size: 2em;
+}
+
+.calendar .fullDate{
+    display: flex;
+    flex-direction: column;
+    padding-top: 4em;
+
+}
+
+.calendar strong{
+  font-size: 3em;
+  letter-spacing: -0.05em;
+   color: #5aade8;
+ 
+}
+
+.agenda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.clock{
+    font-size: 5em;
+    color: #5aade8;
+}

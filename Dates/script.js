@@ -1,11 +1,11 @@
 // 1.
 // You can find the Timezones txt on this link https://gist.github.com/diogocapela/12c6617fc87607d11fd62d2a4f42b02a for the first parameter
-const getBxTime = function () { 
-document.getElementById('bxlTime').innerHTML=
-new Date ().toLocaleString("fr-BE",{timeZone:'Europe/Brussels',dateStyle:'medium',timeStyle :'medium', hourCycle:'h24'})
-};
-getBxTime()
-setInterval(getBxTime,1000);
+// const getBxTime = function () { 
+// document.getElementById('bxlTime').innerHTML=
+// new Date ().toLocaleString("fr-BE",{timeZone:'Europe/Brussels',dateStyle:'medium',timeStyle :'medium', hourCycle:'h24'})
+// };
+// getBxTime()
+// setInterval(getBxTime,1000);
 //call the function name every second so the time will not stay stuck
 
 const getUsTime = function () { 
@@ -28,6 +28,27 @@ new Date ().toLocaleString("fr-BE",{timeZone:'Etc/GMT-3',dateStyle:'medium',time
 };
 getRuTime()
 setInterval(getRuTime,1000);
+
+// Exercise 4
+// Using HTML, CSS (and javascript, of course) reproduce the following picture. 
+// This should be centered both horizontaly and vertically in your page.
+// The date should be of today, in your timezone. Refresh the display every seconds (hint), 
+// so the time stays exact even when the page stays open for a long time
+// When clicking on the hours, toggle the display in 12-hours format or back to 24-hours format.
+const weekday = ["Sun","Mon","Tues","Wed","Thu","Fri","Sat"];
+const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+const getBxTime = function () { 
+  document.querySelector('.clock').innerHTML=
+  new Date ().toLocaleString("fr-BE",{timeZone:'Europe/Brussels',timeStyle :'medium', hourCycle:'h24'});
+  document.querySelector('.jour').innerHTML=  new Date().getDate();
+  document.querySelector('.date').innerHTML= month [new Date().getMonth()];
+  document.querySelector('.day').innerHTML=  weekday [new Date().getDay()];
+  document.querySelector('.year').innerHTML=  new Date().getFullYear();
+  };
+  getBxTime()
+setInterval(getBxTime,1000);
+
 
 // 2. Using timestamps, find how many days have passed since the date of your birth. Feeling old, yet?
 
