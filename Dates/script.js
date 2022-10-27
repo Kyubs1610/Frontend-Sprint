@@ -81,6 +81,7 @@ document.getElementById("numberInput").addEventListener('keyup', function (e) {
   
       const total = now.setTime(now.getTime() + num * 60 * 60 * 1000);
       const dateFormat = new Date(total)
+// constante dateFormat va changer le total en format de date
       return document.getElementById('convert').innerHTML = (dateFormat);
     }
   });
