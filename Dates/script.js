@@ -39,30 +39,23 @@ const weekday = ["Sun","Mon","Tues","Wed","Thu","Fri","Sat"];
 const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let clock = document.querySelector(".clock")
 
-let timeOption = ""
-
 const getBxTime = () => { 
   document.querySelector('.clock').innerHTML=
-  new Date ().toLocaleString("fr-BE",{timeZone:'Europe/Brussels',timeStyle :'medium', hourCycle:'h24'}) + timeOption
-  
+  new Date ().toLocaleString("fr-BE",{timeZone:'Europe/Brussels',timeStyle :'medium', hourCycle:'h24'}) 
   document.querySelector('.jour').innerHTML=  new Date().getDate();
   document.querySelector('.date').innerHTML= month [new Date().getMonth()];
   document.querySelector('.day').innerHTML=  weekday [new Date().getDay()];
   document.querySelector('.year').innerHTML=  new Date().getFullYear(); 
   };
 
+  clock.addEventListener('click', () => {
+  document.querySelector('.clock').innerHTML= 
+  new Date ().toLocaleString("en-US",{timeStyle :'medium', hourCycle:'h12'}) 
+ });
 getBxTime()
 setInterval(getBxTime,1000);
-
-clock.addEventListener('click', () => {
-  document.querySelector('.clock').innerHTML= 
-  new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
- // AM-PM stay only 1 sec because of the setInterval, will check a solution later 
+// AM-PM stay only 1 sec because of the setInterval, will check a solution later 
 // timeOption = 'PM'
-
-});
-
-
 
 // 2. Using timestamps, find how many days have passed since the date of your birth. Feeling old, yet?
 
