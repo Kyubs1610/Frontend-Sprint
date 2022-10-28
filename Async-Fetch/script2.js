@@ -2,7 +2,7 @@ const body = document.querySelector('body');
 const button = document.createElement('button');
 //create button
 body.appendChild(button)
-button.innerText=('Click me to send a fetch query to agify API')
+button.innerText=('Click me to fetch baby')
 
 //create input in a new div
 const text = document.createElement('input')
