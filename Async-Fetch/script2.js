@@ -25,8 +25,9 @@ button.addEventListener('click', () => {
             const div = document.createElement('div')
             body.appendChild (div)
  //let convert a JS value into a JSON string
-            const jsontostring = JSON.stringify(data)
-            div.textContent = (jsontostring)
+            const convert = JSON.stringify(data)
+            div.textContent = (convert)
+            console.log(convert)
         })
         .catch(error => {
           console.log('There was an error!', error)
