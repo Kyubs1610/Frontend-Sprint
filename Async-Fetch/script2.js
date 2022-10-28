@@ -1,0 +1,34 @@
+const body = document.querySelector('body');
+const button = document.createElement('button');
+//create button
+body.appendChild(button)
+button.innerText=('Click me to send a fetch query to agify API')
+
+//create input in a new div
+const text = document.createElement('input')
+const div = document.createElement('div')
+body.appendChild (div)
+div.appendChild(text)
+text.type = 'text'
+text.classList.add("nameInput")
+const myinput = document.querySelector('.nameInput');
+
+// End of the setup
+
+button.addEventListener('click', () => {
+    let myname = myinput.value
+
+    fetch('https://api.agify.io/?name=' + myname)
+
+        .then(response => {return response.json()})
+        .then(data => {
+            const div = document.createElement('div')
+            body.appendChild (div)
+ //let convert a JS value into a JSON string
+          const jsontostring = JSON.stringify(data)
+          div.textContent = (jsontostring)
+        })
+        .catch(error => {
+          console.log('There was an error!', error)
+        })
+    })
