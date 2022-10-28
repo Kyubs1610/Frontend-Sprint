@@ -1,3 +1,6 @@
+// Create a <button>, when clicked becode rules are loaded with a fetch('becode.json'), 
+// then dynamically generate a <ul> list containing each rule in a <li>.
+
 const body = document.querySelector('body');
 const button = document.createElement('button');
 body.appendChild(button)
@@ -22,3 +25,4 @@ button.addEventListener('click', () => {
     })
 
 })
+
