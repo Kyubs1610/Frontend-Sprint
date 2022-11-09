@@ -39,6 +39,8 @@ const weekday = ["Sun","Mon","Tues","Wed","Thu","Fri","Sat"];
 const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let clock = document.querySelector(".clock")
 
+let timeOption = ''
+
 const getBxTime = () => { 
   document.querySelector('.clock').innerHTML=
   new Date ().toLocaleString("fr-BE",{timeZone:'Europe/Brussels',timeStyle :'medium', hourCycle:'h24'}) 
@@ -48,12 +50,19 @@ const getBxTime = () => {
   document.querySelector('.year').innerHTML=  new Date().getFullYear(); 
   };
 
+  setInterval(getBxTime,1000);
+  
   clock.addEventListener('click', () => {
-  document.querySelector('.clock').innerHTML= 
-  new Date ().toLocaleString("en-US",{timeStyle :'medium', hourCycle:'h12'}) 
- });
-getBxTime()
-setInterval(getBxTime,1000);
+   
+  timeOption = new Date ().toLocaleString("en-US",{timeStyle :'medium', hourCycle:'h12'})
+  document.querySelector('.clock').innerHTML= timeOption 
+
+ })
+
+
+
+
+
 // AM-PM stay only 1 sec because of the setInterval, will check a solution later 
 // timeOption = 'PM'
 
